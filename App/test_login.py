@@ -14,9 +14,9 @@ def launch_browser(browser):
 
 @when("enter credentials and login")
 def open_auth_page(browser):
-    LoginPage(browser).open().enter_credentials("arkadybaldin@gmail.com").submit()
+    LoginPage(browser).open().enter_credentials().submit()
 
 
 @then("verify that \"sign out\" button exist")
-def verify_sign_out(browser):
+def verify_sign_in(browser):
     assert LoginPage(browser).check_sign_out_button()

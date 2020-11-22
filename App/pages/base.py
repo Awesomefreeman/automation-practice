@@ -14,9 +14,10 @@ class Base:
         return WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator),
                                                          message=f"Can't find element by locator {locator}")
 
-    def find_elements(self, locator, time=10):
-        return WebDriverWait(self.driver, time).until(EC.presence_of_all_elements_located(locator),
+    def find_elements(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(EC.presence_of_all_elements_located(locator),
                                                       message=f"Can't find elements by locator {locator}")
 
-
-
+    def select(self, select_locator, index):
+        select = self.find_element(select_locator)
+        self.driver.execute_script(f"arguments[0].selectedIndex = {index}; arguments[0].dispatchEvent(new Event('change'))", select)
