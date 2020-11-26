@@ -4,7 +4,7 @@ from pages.account_creation_page import AccountCreationPage
 
 
 @scenario("register_scenario.feature", "Register on site")
-def test():
+def test_register():
     pass
 
 

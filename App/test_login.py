@@ -3,7 +3,7 @@ from pages.login_page import LoginPage
 
 
 @scenario("login_scenario.feature", "Login on site")
-def test():
+def test_login():
     pass
 
 
